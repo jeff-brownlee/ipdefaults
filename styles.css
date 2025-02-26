@@ -1,87 +1,127 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    text-align: center;
-    width: 90%;
-    max-width: 393px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Traffic Light */
-.traffic-light {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.bulb {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid black;
-}
-
-.black { background: black; }
-.red { background: red; }
-.yellow { background: yellow; }
-.green { background: green; }
-.orange { background: orange; }
-
-/* Button Sections */
-.button-section {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.button-section h3 {
-    text-align: center;
-    width: 100%;
-}
-
-.option-btn, #resetBtn {
-    background: #007bff;
+/* Global dark mode */
+body {
+    background-color: #121212;
     color: white;
-    border: none;
-    padding: 15px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 14px;
-    width: 50px;
-    height: 50px;
+    font-family: Arial, sans-serif;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
-.option-btn:hover, #resetBtn:hover {
-    background: #0056b3;
+/* Section styling - integrated title */
+.section {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-/* Reset Button */
-#resetBtn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+/* Section titles - part of section background */
+.section-title {
+    font-size: 18px;
+    color: #bbbbbb;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+/* Adjusted traffic light container (removed border, reduced height) */
+.traffic-light-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Traffic light - reduced height to optimize for iPhone 15 */
+.traffic-light {
+    background-color: #333;
+    width: 90px;
+    height: 50vh; /* Reduced height */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Light circles */
+.light {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #555;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Controls container */
+.controls-container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card wrapper for animations */
+.card-wrapper {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Individual cards */
+.card {
+    width: 100%;
+    flex: 0 0 100%;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Buttons stacked vertically */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Reset button */
+.reset-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Buttons */
+button {
+    background-color: #222;
+    color: white;
+    border: 2px solid #444;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+button:active {
+    background-color: #666;
 }
