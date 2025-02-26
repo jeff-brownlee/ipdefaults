@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 393px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Traffic Light */
+.traffic-light {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.bulb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.black { background: black; }
+.red { background: red; }
+.yellow { background: yellow; }
+.green { background: green; }
+.orange { background: orange; }
+
+/* Button Sections */
+.button-section {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-section h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.option-btn, #resetBtn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.option-btn:hover, #resetBtn:hover {
+    background: #0056b3;
+}
+
+/* Reset Button */
+#resetBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Traffic Light Logic</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Traffic Light -->
+        <div class="traffic-light">
+            <div class="bulb black" id="bulb1"></div>
+            <div class="bulb black" id="bulb2"></div>
+            <div class="bulb black" id="bulb3"></div>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="button-section">
+            <h3>Section 1</h3>
+            <button class="option-btn" data-section="1" data-value="F">F</button>
+            <button class="option-btn" data-section="1" data-value="T">T</button>
+            <button class="option-btn" data-section="1" data-value="R">R</button>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="button-section">
+            <h3>Section 2</h3>
+            <button class="option-btn" data-section="2" data-value="UC">UC</button>
+            <button class="option-btn" data-section="2" data-value="FP">FP</button>
+            <button class="option-btn" data-section="2" data-value="IE">IE</button>
+        </div>
+
+        <!-- Reset Button -->
+        <button id="resetBtn">Reset</button>
+    </div>
+</body>
+</html>
