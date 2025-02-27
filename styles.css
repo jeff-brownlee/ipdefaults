@@ -46,7 +46,7 @@ body {
 .traffic-light {
     background-color: #333;
     width: 90px;
-    height: 40vh;
+    height: 30vh;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
