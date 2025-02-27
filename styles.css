@@ -13,7 +13,7 @@ body {
     padding: 20px;
 }
 
-/* Section styling - integrated title */
+/* Section styling */
 .section {
     width: 100%;
     max-width: 400px;
@@ -24,16 +24,16 @@ body {
     border-radius: 10px;
 }
 
-/* Section titles - part of section background */
-.section-title {
+/* Left-aligning currentStreetText while keeping buttons centered */
+#currentStreetText {
+    text-align: left;
+    width: 100%;
+    padding-left: 10px;
     font-size: 18px;
-    color: #bbbbbb;
     font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #333;
 }
 
-/* Adjusted traffic light container (removed border, reduced height) */
+/* Adjusted traffic light container */
 .traffic-light-container {
     width: 100%;
     display: flex;
@@ -42,11 +42,11 @@ body {
     padding: 10px;
 }
 
-/* Traffic light - reduced height to optimize for iPhone 15 */
+/* Traffic light */
 .traffic-light {
     background-color: #333;
     width: 90px;
-    height: 50vh; /* Reduced height */
+    height: 40vh;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -68,44 +68,50 @@ body {
 
 /* Controls container */
 .controls-container {
-    width: 100%;
-    max-width: 400px;
-    position: relative;
-    overflow: hidden;
+    height: 150px !important;
+    min-height: 150px !important;
+    padding: 15px !important;
+    margin: 0px !important;
+	overflow: hidden !important; /* Hides cards that are off-screen */
 }
 
 /* Card wrapper for animations */
 .card-wrapper {
     display: flex;
+    width: 300%; /* Ensures all three cards fit side by side */
     transition: transform 0.4s ease-in-out;
+    transform: translateX(0); /* Default position */
+    position: relative;
+	overflow: hidden !important; /* Ensures only one card is visible at a time */
 }
 
-/* Individual cards */
+/* Individual cards - Enforcing strict widths to ensure movement */
 .card {
-    width: 100%;
-    flex: 0 0 100%;
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
+    width: 400px;  /* Ensures each card takes full space */
+    flex: 0 0 400px;  /* Prevents them from collapsing */
+    min-width: 400px;  /* Guarantees width is not reduced */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Buttons stacked vertically */
+/* Ensure correct card ordering */
+#selectionCard1 { order: 1; }
+#selectionCard2 { order: 2; }
+#selectionCard3 { order: 3; }
+
+/* Controls - Full centering and fixed layout */
 .controls {
     display: flex;
     flex-direction: column;
     gap: 12px;
-}
-
-/* Reset button */
-.reset-container {
+    align-items: center;
     width: 100%;
     max-width: 400px;
-    display: flex;
     justify-content: center;
-    margin-top: 20px;
 }
 
-/* Buttons */
+/* Buttons - Full centering and fixed positioning */
 button {
     background-color: #222;
     color: white;
@@ -114,14 +120,30 @@ button {
     cursor: pointer;
     font-size: 18px;
     border-radius: 8px;
-    transition: background-color 0.3s;
-    width: 100%;
+    transition: background-color 0.3s, transform 0.1s;
+    width: 70%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Fully centers buttons */
 }
 
+/* Hover Effect - Matches selected color */
 button:hover {
-    background-color: #444;
+    background-color: rgb(55, 159, 131);
 }
 
+/* Selected button color */
 button:active {
-    background-color: #666;
+    background-color: rgb(55, 159, 131);
+}
+
+/* Reset button container */
+.reset-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
