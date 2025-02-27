@@ -8,55 +8,49 @@
 </head>
 <body>
 
-    <div class="section">
-        <div class="section-title">Traffic Light</div>
+    <div class="section" id="trafficContainer">
+        <div id="currentState">Flop</div>
         <div class="traffic-light-container">
             <div class="traffic-light">
-                <div class="light" id="red"></div>
-                <div class="light" id="yellow"></div>
-                <div class="light" id="green"></div>
+                <div class="light" id="bluff"></div>
+                <div class="light" id="value"></div>
+                <div class="light" id="sdv"></div>
             </div>
         </div>
     </div>
 
-    <div class="section controls-container">
-        <div class="section-title">Controls</div>
+    <div class="section controls-container" id="controlPanel">
+        <div id="currentStreet">Street: Flop</div>
         <div class="card-wrapper" id="cardWrapper">
-            <!-- First card with initial selections -->
-            <div class="card" id="card1">
+            <!-- First Selection Card -->
+            <div class="card" id="selectionCard1">
                 <div class="controls">
-                    <button onclick="nextCard()">Select Option 1</button>
-                    <button onclick="nextCard()">Select Option 2</button>
+                    <button id="btnUC" onclick="selectCapped(false)">UC</button>
+                    <button id="btnC" onclick="selectCapped(true)">C</button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div id="selectionCard2" class="card">
+                <div class="controls">
+                    <button id="btnFP" onclick="selectFP(true)">FP</button>
+                    <button id="btnNotFP" onclick="selectFP(false)">Not FP</button>
                 </div>
             </div>
 
-            <!-- Second card with new selections -->
-            <div class="card" id="card2">
+            <!-- Card 3 -->
+            <div id="selectionCard3" class="card">
                 <div class="controls">
-                    <button onclick="prevCard()">New Selection 1</button>
-                    <button onclick="prevCard()">New Selection 2</button>
+                    <button id="btnInelastic" onclick="selectElasticity(false)">IE</button>
+                    <button id="btnElastic" onclick="selectElasticity(true)">E</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="reset-container">
-        <button onclick="resetState()">Reset</button>
+        <button id="btnResetChoices" onclick="resetGame()">Reset</button>
     </div>
 
-    <script>
-        function nextCard() {
-            document.getElementById('cardWrapper').style.transform = 'translateX(-100%)';
-        }
-
-        function prevCard() {
-            document.getElementById('cardWrapper').style.transform = 'translateX(0)';
-        }
-
-        function resetState() {
-            prevCard(); // Move back to the first card
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
